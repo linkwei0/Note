@@ -93,6 +93,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="textBarBtn" destination="Uex-ih-Q6O" id="Kad-uQ-aEd"/>
+                        <outlet property="textNote" destination="ArT-ex-i1r" id="m6D-aD-7yA"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JG1-gy-8Hs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

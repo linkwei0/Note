@@ -26,3 +26,7 @@ var Notes: [[String: Any]] {
 func addItem(nameItem: String){
     Notes.append(["Name": nameItem])
 }
+
+func removeItem(at index: Int){
+    Notes.remove(at: index)
+}

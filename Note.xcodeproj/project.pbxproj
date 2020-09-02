@@ -65,11 +65,11 @@
 			isa = PBXGroup;
 			children = (
 				AD6DFACE24FA63EC00E59FA4 /* Models */,
+				ADF14A3F24FF96C200A6E53E /* View */,
 				AD6DFAC924FA56F200E59FA4 /* Controllers */,
 				AD6DFAB524FA55CE00E59FA4 /* AppDelegate.swift */,
 				AD6DFAB724FA55CE00E59FA4 /* SceneDelegate.swift */,
 				AD6DFAB924FA55CE00E59FA4 /* ViewController.swift */,
-				AD6DFABB24FA55CE00E59FA4 /* Main.storyboard */,
 				AD6DFABE24FA55D100E59FA4 /* Assets.xcassets */,
 				AD6DFAC024FA55D100E59FA4 /* LaunchScreen.storyboard */,
 				AD6DFAC324FA55D100E59FA4 /* Info.plist */,
@@ -93,6 +93,14 @@
 				ADCAAEA524FEBF5B000A160D /* NoteModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		ADF14A3F24FF96C200A6E53E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AD6DFABB24FA55CE00E59FA4 /* Main.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
