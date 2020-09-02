@@ -74,6 +74,9 @@
                                         </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="LZk-60-k7X" kind="show" id="QYe-88-iqa"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -99,6 +102,51 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JG1-gy-8Hs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3002.898550724638" y="-418.52678571428572"/>
+        </scene>
+        <!--Корзина-->
+        <scene sceneID="ojT-rH-yJc">
+            <objects>
+                <tableViewController id="LZk-60-k7X" customClass="TrashTableVC" customModule="Note" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="YKh-Bx-H57">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="sJE-fM-bfs">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sJE-fM-bfs" id="bqn-E5-NaX">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="McI-6K-WMc">
+                                            <rect key="frame" x="305" y="7" width="100" height="30"/>
+                                            <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <state key="normal" title="Восстановить"/>
+                                            <connections>
+                                                <action selector="RestoreNote:" destination="LZk-60-k7X" eventType="touchUpInside" id="xQi-Qz-ItN"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="McI-6K-WMc" firstAttribute="leading" secondItem="bqn-E5-NaX" secondAttribute="leading" constant="305" id="CFb-9P-M3w"/>
+                                        <constraint firstItem="McI-6K-WMc" firstAttribute="centerY" secondItem="bqn-E5-NaX" secondAttribute="centerY" id="CZX-8M-HYn"/>
+                                        <constraint firstAttribute="trailing" secondItem="McI-6K-WMc" secondAttribute="trailing" constant="9" id="fB2-HV-9uo"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="LZk-60-k7X" id="EsO-ef-PX3"/>
+                            <outlet property="delegate" destination="LZk-60-k7X" id="Zlk-7p-OtT"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Корзина" id="OBL-gP-spw"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bH1-ds-FPm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3003" y="343"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="UIz-uV-njQ">
@@ -137,7 +185,28 @@
             </objects>
             <point key="canvasLocation" x="2092.753623188406" y="-418.52678571428572"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="7tJ-zJ-7od">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZdY-gJ-DUo" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Aqh-l1-DCP">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="LZk-60-k7X" kind="relationship" relationship="rootViewController" id="uMA-Gi-0E3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sgx-JJ-LMf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2093" y="343"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="QYe-88-iqa"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="checkNo" width="128" height="128"/>
         <image name="square.and.pencil" catalog="system" width="128" height="118"/>
