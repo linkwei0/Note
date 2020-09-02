@@ -10,37 +10,67 @@ import UIKit
 
 class NotesTableVC: UITableViewController {
 
+    @IBOutlet weak var textBarBtn: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
+    @IBAction func AddNote(_ sender: Any)  {
+           
+           let alertController = UIAlertController(title: "Заметка", message: nil, preferredStyle: .alert)
+           
+           alertController.addTextField { (textField) in
+               textField.placeholder = "Введите заметку"
+           }
+           
+           let alertAction1 = UIAlertAction(title: "Отменить", style: .default) { (alert) in
+               
+           }
+           
+           let alertAction2 = UIAlertAction(title: "Ок", style: .cancel) { (alert) in
+               
+               let newItem = alertController.textFields![0].text
+               
+               if newItem == "" {
+                   let alertErrorEmpty = UIAlertController(title: "Ошибка", message: "Заполните поле!", preferredStyle: .alert)
+                   alertErrorEmpty.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                   self.present(alertErrorEmpty, animated: true, completion: nil)
+               }
+                   
+               else {
+                   addItem(nameItem: newItem!)
+                   self.dismiss(animated: true, completion: nil)
+               }
+               self.tableView.reloadData()
+        }
+
+            
+            alertController.addAction(alertAction1)
+            alertController.addAction(alertAction2)
+            
+            present(alertController, animated: true, completion: nil)
+    }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return Notes.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
-        // Configure the cell...
-
+        cell.backgroundColor = UIColor.systemGray3
+        
+        let currentItem = Notes[indexPath.row]
+        cell.textLabel?.text = currentItem["Name"] as? String
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.

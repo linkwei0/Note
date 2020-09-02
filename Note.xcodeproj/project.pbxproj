@@ -16,6 +16,7 @@
 		AD6DFACB24FA572600E59FA4 /* MenuTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6DFACA24FA572600E59FA4 /* MenuTableVC.swift */; };
 		AD6DFACD24FA5DEA00E59FA4 /* NotesTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6DFACC24FA5DEA00E59FA4 /* NotesTableVC.swift */; };
 		AD6DFAD024FA640200E59FA4 /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6DFACF24FA640200E59FA4 /* MenuModel.swift */; };
+		ADCAAEA624FEBF5B000A160D /* NoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCAAEA524FEBF5B000A160D /* NoteModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		AD6DFACA24FA572600E59FA4 /* MenuTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableVC.swift; sourceTree = "<group>"; };
 		AD6DFACC24FA5DEA00E59FA4 /* NotesTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesTableVC.swift; sourceTree = "<group>"; };
 		AD6DFACF24FA640200E59FA4 /* MenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuModel.swift; sourceTree = "<group>"; };
+		ADCAAEA524FEBF5B000A160D /* NoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				AD6DFACF24FA640200E59FA4 /* MenuModel.swift */,
+				ADCAAEA524FEBF5B000A160D /* NoteModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -166,6 +169,7 @@
 				AD6DFABA24FA55CE00E59FA4 /* ViewController.swift in Sources */,
 				AD6DFAB624FA55CE00E59FA4 /* AppDelegate.swift in Sources */,
 				AD6DFAD024FA640200E59FA4 /* MenuModel.swift in Sources */,
+				ADCAAEA624FEBF5B000A160D /* NoteModel.swift in Sources */,
 				AD6DFACD24FA5DEA00E59FA4 /* NotesTableVC.swift in Sources */,
 				AD6DFACB24FA572600E59FA4 /* MenuTableVC.swift in Sources */,
 				AD6DFAB824FA55CE00E59FA4 /* SceneDelegate.swift in Sources */,
