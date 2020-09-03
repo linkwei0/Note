@@ -18,6 +18,7 @@ class TrashTableVC: UITableViewController {
         tableView.tableFooterView = UIView()
     }
     
+    
     @IBAction func RestoreNote(_ sender: Any) {
     }
     

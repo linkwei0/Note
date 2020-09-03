@@ -10,6 +10,8 @@ import UIKit
 
 class NotesTableVC: UITableViewController {
     
+
+    
     @IBOutlet weak var textNote: UINavigationItem!
     @IBOutlet weak var textBarBtn: UIBarButtonItem!
     
@@ -19,6 +21,8 @@ class NotesTableVC: UITableViewController {
         setupNavBar()
         tableView.tableFooterView = UIView()
     }
+    
+
     
     func setupNavBar() {
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)

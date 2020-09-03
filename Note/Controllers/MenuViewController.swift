@@ -19,7 +19,10 @@ class MenuViewController: UIViewController {
         super.viewDidLoad()
         
         setupNavBar()
+        ForLabel()
     }
+    
+  
     
     func ForLabel() {
         
