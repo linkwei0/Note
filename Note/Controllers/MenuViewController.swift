@@ -15,14 +15,17 @@ class MenuViewController: UIViewController {
     @IBOutlet weak var CompletedLabel: UILabel!
     @IBOutlet weak var NeedLabel: UILabel!
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        update()
         setupNavBar()
         ForLabel()
     }
     
-  
+    func update() {
+    }
     
     func ForLabel() {
         

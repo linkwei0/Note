@@ -65,10 +65,21 @@ class TrashTableVC: UITableViewController {
         return 100
     }
     
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+          let degree: Double = 90
+          let rotationAngle = CGFloat(degree * .pi / 180)
+          let rotationTransform = CATransform3DMakeRotation(rotationAngle, 1, 0, 0)
+          cell.layer.transform = rotationTransform
+          
+          UIView.animate(withDuration: 1, delay: 0.2 * Double(indexPath.row), options: .curveEaseInOut, animations: {
+              cell.layer.transform = CATransform3DIdentity
+          })
+      }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
-        cell.backgroundColor = UIColor.systemGray3
+        cell.backgroundColor = UIColor.darkGray
         
         let currentItem = Trash[indexPath.row]
         cell.textLabel?.text = currentItem["Name"] as? String
