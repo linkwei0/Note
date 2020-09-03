@@ -27,7 +27,26 @@ class TrashTableVC: UITableViewController {
         navigationController?.navigationBar.tintColor = .white
     }
     
-
+    func TrueFalse(indexPath: IndexPath) {
+        let alertController = UIAlertController(title: "Удалить заметку. Данное действие необратимо", message: nil, preferredStyle: .alert)
+        
+        let alertAction1 = UIAlertAction(title: "Отменить", style: .default) { (alert) in
+            
+        }
+        
+        let alertAction2 = UIAlertAction(title: "Ок", style: .cancel) { (alert) in
+            
+            removeItemTrash(at: indexPath.row)
+            self.dismiss(animated: true, completion: nil)
+            self.tableView.reloadData()
+        }
+        
+        
+        alertController.addAction(alertAction1)
+        alertController.addAction(alertAction2)
+        
+        present(alertController, animated: true, completion: nil)
+    }
     
     // MARK: - Table view data source
     
@@ -67,7 +86,7 @@ class TrashTableVC: UITableViewController {
         
         if editingStyle == .delete {
             
-            //TrueFalse(indexPath: indexPath)
+            TrueFalse(indexPath: indexPath)
             
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {

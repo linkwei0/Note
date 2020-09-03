@@ -17,7 +17,6 @@ class NotesTableVC: UITableViewController {
         super.viewDidLoad()
         
         setupNavBar()
-        
         tableView.tableFooterView = UIView()
     }
     
