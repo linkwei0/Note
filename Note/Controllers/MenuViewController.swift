@@ -10,27 +10,33 @@ import UIKit
 
 class MenuViewController: UIViewController {
     
+    var CountLabel = Int()
     @IBOutlet weak var NoteLabel: UILabel!
     @IBOutlet weak var RemidLabel: UILabel!
     @IBOutlet weak var CompletedLabel: UILabel!
     @IBOutlet weak var NeedLabel: UILabel!
-    
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        update()
         setupNavBar()
-        ForLabel()
+        let timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
+        //update(timer: Timer)
     }
     
-    func update() {
-    }
-    
-    func ForLabel() {
+    @objc func update() {
         
-        CompletedLabel.text = String (Trash.count)
-        NoteLabel.text = String (Notes.count)
+        //if NoteLabel?.text == nil {
+            //print(NoteLabel?.text)
+         //   return
+        //}
+        //else {
+        CountLabel = Notes.count
+        //print("Finish", CountLabel)
+        //RemidLabel.text! = ToDoListItem[]
+        CompletedLabel.text! = String(Trash.count)
+        NoteLabel.text! = String(CountLabel)
+        //}
     }
     
     func setupNavBar() {

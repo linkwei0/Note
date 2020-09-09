@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 var Notes: [[String: Any]] {
     set{
@@ -24,7 +25,7 @@ var Notes: [[String: Any]] {
 }
 
 func addItem(nameItem: String){
-    Notes.append(["Name": nameItem])
+   Notes.append(["Name": nameItem])
 }
 
 func removeItem(at index: Int){
