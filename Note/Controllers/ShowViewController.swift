@@ -6,45 +6,40 @@
 //  Copyright © 2020 Артём Бацанов. All rights reserved.
 //
 
-import RealmSwift
+//import RealmSwift
 import UIKit
 
-class ShowViewController: UIViewController {
-    
-    public var item: ToDoListItem?
-    public var deletionHandler: (() -> Void)?
-    private let realm = try! Realm()
-    
-    @IBOutlet var itemLabel: UILabel!
-    @IBOutlet var dateLabel: UILabel!
-    
-    static let dateFormatter: DateFormatter = {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .medium
-        return dateFormatter
-    }()
+class ShowViewController: UIViewController, UITextFieldDelegate {
+
+    @IBOutlet var titleField: UITextField!
+    @IBOutlet var bodyField: UITextField!
+    @IBOutlet var datePicker: UIDatePicker!
+
+    public var completion: ((String, String, Date) -> Void)?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        titleField.delegate = self
+        bodyField.delegate = self
+        datePicker.locale = Locale(identifier: "RU_ru")
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(pushSave))
+    }
 
-        ShowViewController.dateFormatter.locale = Locale(identifier: "ru_RU")
-        itemLabel.text = item?.item
-        dateLabel.text = Self.dateFormatter.string(from: item!.date)
-        
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(DeleteRemider))
-    }
-    
-    @objc private func DeleteRemider() {
-        guard let myItem = self.item else {
-            return
+    @objc func pushSave() {
+            if let titleText = titleField.text, !titleText.isEmpty,
+                let bodyText = bodyField.text, !bodyText.isEmpty {
+
+                let targetDate = datePicker.date
+
+                completion?(titleText, bodyText, targetDate)
+
+            }
         }
-        
-        realm.beginWrite()
-        realm.delete(myItem)
-        try! realm.commitWrite()
-        
-        deletionHandler?()
-        navigationController?.popToRootViewController(animated: true)
+
+        func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+            textField.resignFirstResponder()
+            return true
+        }
+
     }
-}
 

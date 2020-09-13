@@ -21,6 +21,7 @@
 		AD6DFACD24FA5DEA00E59FA4 /* NotesTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6DFACC24FA5DEA00E59FA4 /* NotesTableVC.swift */; };
 		ADA6BA0F2500CC5400639A61 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA6BA0E2500CC5400639A61 /* MenuViewController.swift */; };
 		ADCAAEA624FEBF5B000A160D /* NoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCAAEA524FEBF5B000A160D /* NoteModel.swift */; };
+		ADF0B07D250A280100F0B286 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF0B07C250A280100F0B286 /* SettingsViewController.swift */; };
 		ADF14A4124FF991900A6E53E /* TrashModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF14A4024FF991900A6E53E /* TrashModel.swift */; };
 		ADF14A4324FF996D00A6E53E /* TrashTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF14A4224FF996D00A6E53E /* TrashTableVC.swift */; };
 /* End PBXBuildFile section */
@@ -44,6 +45,7 @@
 		AD6DFACC24FA5DEA00E59FA4 /* NotesTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesTableVC.swift; sourceTree = "<group>"; };
 		ADA6BA0E2500CC5400639A61 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		ADCAAEA524FEBF5B000A160D /* NoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteModel.swift; sourceTree = "<group>"; };
+		ADF0B07C250A280100F0B286 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		ADF14A4024FF991900A6E53E /* TrashModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashModel.swift; sourceTree = "<group>"; };
 		ADF14A4224FF996D00A6E53E /* TrashTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashTableVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -117,10 +119,11 @@
 				AD6DFACC24FA5DEA00E59FA4 /* NotesTableVC.swift */,
 				ADF14A4224FF996D00A6E53E /* TrashTableVC.swift */,
 				AD13194F25062B1A0081FE48 /* RemiderViewController.swift */,
+				AD131955250632D90081FE48 /* NotesShowViewController.swift */,
+				ADA6BA0E2500CC5400639A61 /* MenuViewController.swift */,
 				AD13195125062B990081FE48 /* ShowViewController.swift */,
 				AD13195325062BDD0081FE48 /* MainViewController.swift */,
-				ADA6BA0E2500CC5400639A61 /* MenuViewController.swift */,
-				AD131955250632D90081FE48 /* NotesShowViewController.swift */,
+				ADF0B07C250A280100F0B286 /* SettingsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 				ADCAAEA624FEBF5B000A160D /* NoteModel.swift in Sources */,
 				AD13195025062B1A0081FE48 /* RemiderViewController.swift in Sources */,
 				AD6DFACD24FA5DEA00E59FA4 /* NotesTableVC.swift in Sources */,
+				ADF0B07D250A280100F0B286 /* SettingsViewController.swift in Sources */,
 				ADF14A4324FF996D00A6E53E /* TrashTableVC.swift in Sources */,
 				ADF14A4124FF991900A6E53E /* TrashModel.swift in Sources */,
 				AD6DFAB824FA55CE00E59FA4 /* SceneDelegate.swift in Sources */,

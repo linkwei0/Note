@@ -5,7 +5,7 @@
 //  Created by Артём Бацанов on 03.09.2020.
 //  Copyright © 2020 Артём Бацанов. All rights reserved.
 //
-
+import RealmSwift
 import UIKit
 
 class MenuViewController: UIViewController {
@@ -21,6 +21,7 @@ class MenuViewController: UIViewController {
         super.viewDidLoad()
         setupNavBar()
         let timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
+        
         //update(timer: Timer)
     }
     
