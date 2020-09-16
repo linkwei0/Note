@@ -8,11 +8,14 @@
 
 import UIKit
 
-class NotesTableVC: UITableViewController {
+class NotesTableVC: UITableViewController, UISearchBarDelegate {
     
     @IBOutlet var searchBar: UISearchBar!
     
-    var filter = [Notes]
+    //var filter = ()
+    
+    var searchingCountry = [[String : Any]]()
+    var searching = false
     
     
     //@IBOutlet weak var textNote: UINavigationItem!
@@ -32,12 +35,9 @@ class NotesTableVC: UITableViewController {
         searchBar.placeholder = "Поиск"
         searchBar.isTranslucent = true
         searchBar.barTintColor = UIColor.darkGray
-        searchBar.backgroundColor = UIColor.systemGray
+        searchBar.backgroundColor = UIColor.darkGray
+        searchBar.tintColor = UIColor.white
     }
-    
-    /*@objc func backTo(_ sender: Any) {
-     dismiss(animated: true, completion: nil)
-     }*/
     
     func setupNavBar() {
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
@@ -69,8 +69,6 @@ class NotesTableVC: UITableViewController {
                 
             else {
                 addItem(nameItem: newItem!)
-                //print("Start")
-                //vc.update()
             }
             self.tableView.reloadData()
         }
@@ -90,7 +88,12 @@ class NotesTableVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Notes.count
+        if searching {
+            return searchingCountry.count
+        }
+        else {
+            return Notes.count
+        }
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -110,12 +113,27 @@ class NotesTableVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        
+        if searching{
+            let curr = searchingCountry[indexPath.row]
+            cell.textLabel?.text = curr["Name"] as? String
+        }
+        else {
+            let currentItem = Notes[indexPath.row]
+            cell.textLabel?.text = currentItem["Name"] as? String
+        }
         cell.backgroundColor = UIColor.darkGray
         
-        let currentItem = Notes[indexPath.row]
-        cell.textLabel?.text = currentItem["Name"] as? String
+        
         return cell
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchingCountry = Notes.filter({ (searchText) -> Bool in
+            searching = true
+            return true
+        })
+        searching = true
+        tableView.reloadData()
     }
     
 //        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

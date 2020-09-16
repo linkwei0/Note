@@ -14,6 +14,7 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
     }
     
     @IBAction func addPermissions(_ sender: Any) {
@@ -28,6 +29,8 @@ class SettingsViewController: UIViewController {
             }
         })
     }
+    
+    
     
     
 //    func scheduleTest() {

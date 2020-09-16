@@ -51,10 +51,10 @@ class MainViewController: UIViewController {
                                                                                                              from: targetDate),
                                                                repeats: false)
 
-                   let request = UNNotificationRequest(identifier: "some_long_id", content: content, trigger: trigger)
+                   let request = UNNotificationRequest(identifier: "id", content: content, trigger: trigger)
                    UNUserNotificationCenter.current().add(request, withCompletionHandler: { error in
                        if error != nil {
-                           print("something went wrong")
+                           print("Error")
                        }
                    })
                }
@@ -62,38 +62,6 @@ class MainViewController: UIViewController {
            navigationController?.pushViewController(vc, animated: true)
 
        }
-
-//    @IBAction func didTapTest() {
-//        // fire test notification
-//        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound], completionHandler: { success, error in
-//            if success {
-//                // schedule test
-//                //self.scheduleTest()
-//            }
-//            else if error != nil {
-//                print("error occurred")
-//            }
-//        })
-//    }
-
-//    func scheduleTest() {
-//        let content = UNMutableNotificationContent()
-//        content.title = "Hello World"
-//        content.sound = .default
-//        content.body = "My long body. My long body. My long body. My long body. My long body. My long body. "
-//
-//        let targetDate = Date().addingTimeInterval(10)
-//        let trigger = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second],
-//                                                                                                  from: targetDate),
-//                                                    repeats: false)
-//
-//        let request = UNNotificationRequest(identifier: "some_long_id", content: content, trigger: trigger)
-//        UNUserNotificationCenter.current().add(request, withCompletionHandler: { error in
-//            if error != nil {
-//                print("something went wrong")
-//            }
-//        })
-//    }
 
 }
 

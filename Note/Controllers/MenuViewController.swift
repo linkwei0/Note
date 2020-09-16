@@ -37,6 +37,7 @@ class MenuViewController: UIViewController {
         //RemidLabel.text! = ToDoListItem[]
         CompletedLabel.text! = String(Trash.count)
         NoteLabel.text! = String(CountLabel)
+        NeedLabel.text! = String(Targets.count)
         //}
     }
     

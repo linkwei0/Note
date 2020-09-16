@@ -22,7 +22,7 @@ class ShowViewController: UIViewController, UITextFieldDelegate {
         titleField.delegate = self
         bodyField.delegate = self
         datePicker.locale = Locale(identifier: "RU_ru")
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(pushSave))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Сохранить", style: .done, target: self, action: #selector(pushSave))
     }
 
     @objc func pushSave() {
