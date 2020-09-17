@@ -22,23 +22,14 @@ class MenuViewController: UIViewController {
         setupNavBar()
         let timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
         
-        //update(timer: Timer)
     }
     
     @objc func update() {
         
-        //if NoteLabel?.text == nil {
-            //print(NoteLabel?.text)
-         //   return
-        //}
-        //else {
         CountLabel = Notes.count
-        //print("Finish", CountLabel)
-        //RemidLabel.text! = ToDoListItem[]
         CompletedLabel.text! = String(Trash.count)
         NoteLabel.text! = String(CountLabel)
         NeedLabel.text! = String(Targets.count)
-        //}
     }
     
     func setupNavBar() {

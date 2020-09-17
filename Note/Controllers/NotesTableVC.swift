@@ -12,19 +12,14 @@ class NotesTableVC: UITableViewController, UISearchBarDelegate {
     
     @IBOutlet var searchBar: UISearchBar!
     
-    //var filter = ()
     
     var searchingCountry = [[String : Any]]()
     var searching = false
     
     
-    //@IBOutlet weak var textNote: UINavigationItem!
-    //@IBOutlet weak var textBarBtn: UIBarButtonItem!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //navigationItem.leftBarButtonItem = UIBarButtonItem(title: "< Меню", style: .plain, target: self, action: #selector(backTo))
         searBar()
         setupNavBar()
         tableView.tableFooterView = UIView()
@@ -136,16 +131,6 @@ class NotesTableVC: UITableViewController, UISearchBarDelegate {
         tableView.reloadData()
     }
     
-//        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//            if segue.identifier == "notesShow" {
-//                if let indexPath = tableView.indexPathForSelectedRow {
-//                    let vc = segue.destination as! NotesShowViewController
-//                    let currentItem = Notes[indexPath.row]
-//                    vc.nameLabel = currentItem["Name"] as? String
-//                }
-//            }
-//        }
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "notesShow") as! NotesShowViewController
@@ -156,19 +141,8 @@ class NotesTableVC: UITableViewController, UISearchBarDelegate {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    /*
-     // Override to support conditional editing of the table view.
-     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the specified item to be editable.
-     return true
-     }
-     */
-    
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        //let newItem = alertController.textFields![0].text
-        //var a: String
         if editingStyle == .delete {
-            //  addItem(nameItem: newItem!)
             let currentItem = Notes[indexPath.row]
             let newItem = currentItem["Name"] as! String
             addItemTrash(nameItem: newItem)
@@ -179,56 +153,4 @@ class NotesTableVC: UITableViewController, UISearchBarDelegate {
             
         }
     }
-    
-    //    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    //        tableView.allowsSelection = false
-    //
-    //        let selectedCell = tableView.cellForRow(at: indexPath)!
-    //        let VC = NotesShowViewController()
-    //        performSegue(withIdentifier: "VC", sender: selectedCell)
-    //        self.navigationController?.pushViewController(VC, animated: true)
-    //
-    //
-    //
-    //
-    //        //if selectedCell.backgroundColor == UIColor.formulaFormColor() {
-    //            //selectedCell.backgroundColor = UIColor.formulaMediumBlue()
-    //           // UIView.animateWithDuration(0.5, animations: {
-    //                //selectedCell.backgroundColor = UIColor.formulaFormColor()
-    //           // })
-    //        //} else {
-    //            //selectedCell.backgroundColor = UIColor.formulaGreenColor()
-    //           // UIView.animateWithDuration(0.5, animations: {
-    //             //   selectedCell.backgroundColor = UIColor.formulaLightGreenColor()
-    //            //})
-    //        }
-    
 }
-
-
-
-/*
- // Override to support rearranging the table view.
- override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
- 
- }
- */
-
-/*
- // Override to support conditional rearranging of the table view.
- override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
- // Return false if you do not want the item to be re-orderable.
- return true
- }
- */
-
-/*
- // MARK: - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
- // Get the new view controller using segue.destination.
- // Pass the selected object to the new view controller.
- }
- */
-

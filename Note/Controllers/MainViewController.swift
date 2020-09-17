@@ -27,7 +27,6 @@ class MainViewController: UIViewController {
     }
 
     @IBAction func didTapAdd()  {
-           // show add vc
            guard let vc = storyboard?.instantiateViewController(identifier: "show") as? ShowViewController else {
                return
            }
