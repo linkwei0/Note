@@ -115,8 +115,6 @@ class TagetsTableVC: UITableViewController {
                 cell.textLabel?.alpha = 1
                 cell.imageView?.alpha = 1
             }
-            print("Tut")
-            print(cell)
             return cell
         }
 

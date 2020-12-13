@@ -19,7 +19,6 @@ class NotesTableVC: UITableViewController, UISearchBarDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         searBar()
         setupNavBar()
         tableView.tableFooterView = UIView()
@@ -111,8 +110,7 @@ class NotesTableVC: UITableViewController, UISearchBarDelegate {
         if searching{
             let curr = searchingCountry[indexPath.row]
             cell.textLabel?.text = curr["Name"] as? String
-        }
-        else {
+        } else {
             let currentItem = Notes[indexPath.row]
             cell.textLabel?.text = currentItem["Name"] as? String
         }

@@ -46,9 +46,7 @@ class MainViewController: UIViewController {
                    content.body = body
 
                    let targetDate = date
-                   let trigger = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second],
-                                                                                                             from: targetDate),
-                                                               repeats: false)
+                   let trigger = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: targetDate), repeats: false)
 
                    let request = UNNotificationRequest(identifier: "id", content: content, trigger: trigger)
                    UNUserNotificationCenter.current().add(request, withCompletionHandler: { error in
