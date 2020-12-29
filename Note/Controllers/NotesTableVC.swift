@@ -12,6 +12,7 @@ class NotesTableVC: UITableViewController, UISearchBarDelegate {
     
     @IBOutlet var searchBar: UISearchBar!
     
+    @IBOutlet weak var pushAddNote: UIBarButtonItem!
     
     var searchingCountry = [[String : Any]]()
     var searching = false
@@ -43,6 +44,7 @@ class NotesTableVC: UITableViewController, UISearchBarDelegate {
     @IBAction func pushAddNote(_ sender: Any) {
         
         let alertController = UIAlertController(title: "Заметка", message: nil, preferredStyle: .alert)
+        alertController.view.accessibilityIdentifier = "newAddNote"
         
         alertController.addTextField { (textField) in
             textField.placeholder = "Введите заметку"
@@ -58,7 +60,10 @@ class NotesTableVC: UITableViewController, UISearchBarDelegate {
             if newItem == "" {
                 let alertErrorEmpty = UIAlertController(title: "Ошибка", message: "Заполните поле!", preferredStyle: .alert)
                 alertErrorEmpty.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                self.present(alertErrorEmpty, animated: true, completion: nil)
+                DispatchQueue.main.async {
+                    alertErrorEmpty.view.accessibilityIdentifier = "errorAlertAddNote"
+                    self.present(alertErrorEmpty, animated: true, completion: nil)
+                }
             }
                 
             else {
@@ -71,7 +76,10 @@ class NotesTableVC: UITableViewController, UISearchBarDelegate {
         alertController.addAction(alertAction1)
         alertController.addAction(alertAction2)
         
-        present(alertController, animated: true, completion: nil)
+        DispatchQueue.main.async {
+            alertController.view.accessibilityIdentifier = "successAlertAddNote"
+            self.present(alertController, animated: true, completion: nil)
+        }
     }
     
     // MARK: - Table view data source

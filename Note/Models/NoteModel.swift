@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-var Notes: [[String: Any]] {
+public var Notes: [[String: Any]] {
     set{
         UserDefaults.standard.set(newValue, forKey: "NoteKey")
         UserDefaults.standard.synchronize()

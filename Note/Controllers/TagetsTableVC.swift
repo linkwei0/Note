@@ -38,7 +38,10 @@ class TagetsTableVC: UITableViewController {
             alertController.addAction(alertAction1)
             alertController.addAction(alertAction2)
             
-            present(alertController, animated: true, completion: nil)
+            DispatchQueue.main.async {
+                alertController.view.accessibilityIdentifier = "successAlertAddTarget"
+                self.present(alertController, animated: true, completion: nil)
+            }
         }
         
         override func viewDidLoad() {

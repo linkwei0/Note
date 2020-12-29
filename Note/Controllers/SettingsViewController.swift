@@ -11,9 +11,13 @@ import UIKit
 
 class SettingsViewController: UIViewController {
     
+    @IBOutlet weak var clearTrash: UIButton!
+    @IBOutlet weak var clearNotes: UIButton!
+    @IBOutlet weak var clearTargets: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
     }
     
@@ -41,7 +45,10 @@ class SettingsViewController: UIViewController {
         alertController.addAction(alertAction1)
         alertController.addAction(alertAction2)
         
-        present(alertController, animated: true, completion: nil)
+        DispatchQueue.main.async {
+            alertController.view.accessibilityIdentifier = "successAlertNotes"
+            self.present(alertController, animated: true, completion: nil)
+        }
     }
     
     @IBAction func removeAllTargets() {
@@ -58,7 +65,10 @@ class SettingsViewController: UIViewController {
         alertController.addAction(alertAction1)
         alertController.addAction(alertAction2)
         
-        present(alertController, animated: true, completion: nil)
+        DispatchQueue.main.async {
+            alertController.view.accessibilityIdentifier = "successAlertTargets"
+            self.present(alertController, animated: true, completion: nil)
+        }
     }
     
     @IBAction func removeAllTrash() {
@@ -76,6 +86,9 @@ class SettingsViewController: UIViewController {
         alertController.addAction(alertAction1)
         alertController.addAction(alertAction2)
         
-        present(alertController, animated: true, completion: nil)
+        DispatchQueue.main.async {
+            alertController.view.accessibilityIdentifier = "successAlertTrash"
+            self.present(alertController, animated: true, completion: nil)
+        }
     }
 }
